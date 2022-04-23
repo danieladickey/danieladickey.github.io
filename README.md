@@ -12,7 +12,7 @@ visit [danieladickey.com](https://danieladickey.com/) or [https://danieladickey.
 - Portfolio **(HTML, Bootstrap 5)**
 - Resume - my current resume available for download as a PDF **(HTML, Bootstrap 5)**
 
-    - ~~Tetris **(JavaScript)**~~
+    - ~~Tetris **(JavaScript, Canvas, HTML, CSS)**~~
     - ~~Lunar Lander **(JavaScript)**~~
     - ~~Maze **(HTML, CSS, JavaScript)**~~
     - ~~Agile **(HTML, Bootstrap 5)**~~
@@ -27,6 +27,7 @@ visit [danieladickey.com](https://danieladickey.com/) or [https://danieladickey.
 - CSS
 - Bootstrap 5
 - ~~JavaScript~~
+- ~~Canvas~~
 - ~~Python~~
 - ~~Django~~
 - ~~NumPy~~
