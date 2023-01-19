@@ -8,9 +8,9 @@ visit [danieladickey.com](https://danieladickey.com/) or [https://danieladickey.
 ### Contents
 
 - About - a little about myself **(HTML, Bootstrap)**
-- Contact - my email, phone, and "social media" accounts **(HTML, Bootstrap)**
 - Portfolio **(HTML, Bootstrap)**
 - Resume - my current resume available for download as a PDF **(HTML, Bootstrap)**
+- Contact - my email, and "social media" accounts **(HTML, Bootstrap)**
 
     - ~~Tetris **(JavaScript, Canvas, HTML, CSS)**~~
     - ~~Lunar Lander **(JavaScript)**~~
