@@ -12,9 +12,9 @@ visit [danieladickey.com](https://danieladickey.com/) or [https://danieladickey.
 - Resume - my current resume available for download as a PDF **(HTML, Bootstrap)**
 - Contact - my email, and "social media" accounts **(HTML, Bootstrap)**
 
-    - ~~Tetris **(JavaScript, Canvas, HTML, CSS)**~~
-    - ~~Lunar Lander **(JavaScript)**~~
-    - ~~Maze **(HTML, CSS, JavaScript)**~~
+    - Tetris **(JavaScript, Canvas, HTML, CSS)**
+    - Lunar Lander **(JavaScript)**
+    - Maze **(HTML, CSS, JavaScript)**
     - ~~Agile **(HTML, Bootstrap)**~~
     - ~~Fund Raiser Auction **(HTML, CSS, Django, Python, JavaScript)**~~
     - ~~AI for detecting bee presence, from either image or audio using CNNs, Ensemble CNNs, and RF **(Python, NumPy,Tensor Flow, TF Learn, pickle)**~~
@@ -26,8 +26,8 @@ visit [danieladickey.com](https://danieladickey.com/) or [https://danieladickey.
 - HTML
 - CSS
 - Bootstrap
-- ~~JavaScript~~
-- ~~Canvas~~
+- JavaScript
+- Canvas
 - ~~Python~~
 - ~~Django~~
 - ~~NumPy~~
