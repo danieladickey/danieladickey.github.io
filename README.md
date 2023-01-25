@@ -1,42 +1,32 @@
 # danieladickey.github.io
 
-## My Website
 
-This is a place for me to show off my work. It will serve as my portfolio. To view my website
-visit [danieladickey.com](https://danieladickey.com/) or [https://danieladickey.github.io/](https://danieladickey.github.io/).
+## Description
 
-### Contents
+This website is the portfolio of Daniel A Dickey. It demonstrates some of the technologies he is familiar with. To view the website, visit
+[danieladickey.com](https://danieladickey.com/) or [https://danieladickey.github.io/](https://danieladickey.github.io/). The source code for 
+this and Daniel's other personal projects can be found at [github.com/danieladickey/](https://github.com/danieladickey/).
 
-- About - a little about myself **(HTML, Bootstrap)**
-- Portfolio **(HTML, Bootstrap)**
-- Resume - my current resume available for download as a PDF **(HTML, Bootstrap)**
-- Contact - my email, and "social media" accounts **(HTML, Bootstrap)**
 
-    - Tetris **(JavaScript, Canvas, HTML, CSS)**
-    - Lunar Lander **(JavaScript)**
-    - Maze **(HTML, CSS, JavaScript)**
-    - ~~Agile **(HTML, Bootstrap)**~~
-    - ~~Fund Raiser Auction **(HTML, CSS, Django, Python, JavaScript)**~~
-    - ~~AI for detecting bee presence, from either image or audio using CNNs, Ensemble CNNs, and RF **(Python, NumPy,Tensor Flow, TF Learn, pickle)**~~
+## Contents of this Site **(Technology Used to Create)**
+
+- About - Some information about Daniel **(Bootstrap, HTML, CSS)**
+- Resume - Daniel's current resume is available for download as a PDF **(Bootstrap, HTML, CSS)**
+- Contact - Daniel's email and "social media" accounts **(Bootstrap, HTML, CSS)**
+- Portfolio **(Bootstrap, HTML, CSS)**
+    - Tetris **(JavaScript, Canvas, Bootstrap, HTML, CSS)**
+    - Lunar Lander **(JavaScript, Canvas, Bootstrap, HTML, CSS)**
+    - Maze **(JavaScript, Canvas, HTML, CSS)**
+    - ~~Agile **(Bootstrap, HTML, CSS)**~~
+    - ~~Fund Raiser Auction **(Scrum, HTML, CSS, JavaScript, Django, Python, MVC)**~~
+    - ~~AI for detecting bee presence, from either image or audio using CNNs, Ensemble CNNs, and RF **(Python, NumPy, Tensor Flow, TF Learn, pickle, Google Colab)**~~
     - ~~Collaborative to-do app for Android **(Java, MVC, Firebase, Material Design)**~~
-    - ~~Bus tracking app for Android **(Kotlin, MapBox)**~~
+    - ~~Bus tracking app for Android **(Kotlin, MapBox, Material Design)**~~
 
-### Featured Technology
 
-- HTML
-- CSS
-- Bootstrap
-- JavaScript
-- Canvas
-- ~~Python~~
-- ~~Django~~
-- ~~NumPy~~
-- ~~Tensor Flow~~
-- ~~TF Learn~~
-- ~~pickle~~
-- ~~Java~~
-- ~~MVC~~
-- ~~Firebase~~
-- ~~Material Design~~
-- ~~Kotlin~~
-- ~~MapBox~~
+## Other Technologies Used
+- **Git**
+- **GitHub**
+- **GitHub Pages**
+- **GCP**
+    - **Cloud Storage Bucket**
