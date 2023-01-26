@@ -18,15 +18,13 @@ this and Daniel's other personal projects can be found at [github.com/danieladic
     - Lunar Lander **(JavaScript, Canvas, Bootstrap, HTML, CSS)**
     - Maze **(JavaScript, Canvas, HTML, CSS)**
     - ~~Agile **(Bootstrap, HTML, CSS)**~~
-    - ~~Fund Raiser Auction **(Scrum, HTML, CSS, JavaScript, Django, Python, MVC)**~~
-    - ~~AI for detecting bee presence, from either image or audio using CNNs, Ensemble CNNs, and RF **(Python, NumPy, Tensor Flow, TF Learn, pickle, Google Colab)**~~
+    - ~~Fund Raiser Auction **(Scrum, HTML, CSS, JavaScript, Django, Python, MVC, Git, GitHub, SQLite)**~~
+    - ~~AI for detecting bee buzzing from audio clips using CNNs, Ensemble CNNs, and RF **(Python, NumPy, Tensor Flow, TF Learn, pickle, Google Colab)**~~
     - ~~Collaborative to-do app for Android **(Java, MVC, Firebase, Material Design)**~~
-    - ~~Bus tracking app for Android **(Kotlin, MapBox, Material Design)**~~
+    - ~~Bus tracking app for Android **(Kotlin, MapBox, Material Design, XML, Google AdMob, Gradle)**~~
 
 
 ## Other Technologies Used
-- **Git**
-- **GitHub**
 - **GitHub Pages**
 - **GCP**
     - **Cloud Storage Bucket**

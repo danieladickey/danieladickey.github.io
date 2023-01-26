@@ -58,9 +58,10 @@
 
 
     <div style="padding: 2em;">
-        <!-- Card Deck -->
 
+        <!-- Card Deck ONE-->
         <div class="card-deck">
+
             <!-- Tetris Card-->
             <div class="card bg-light mb-3">
 
@@ -69,17 +70,19 @@
                 <div class="card-body">
                     <h5 class="card-title">Tetris</h5>
 
-                    <p class="card-text">Daniel wrote a Tetris-like game with JavaScript, Canvas, HTML, CSS, and
-                        Bootstrap. Some of the features of the game include sound, customizable controls, particle
-                        effects, high-score (stored in the browser), attract-mode. Attract mode is a simple algorithm
-                        that plays the game whengit no input is detected to attract a user to the game and demonstrate
-                        how
-                        it is played.</p>
+                    <p class="card-text">Daniel wrote a Tetris-like game featuring sound, customizable controls,
+                        particle effects, high score (stored in the browser), and attract mode. Attract mode is a simple
+                        algorithm that plays the game when no input is detected. It does this to attract a user to the
+                        game and demonstrate how it is played, like an old arcade game.</p>
 
                     <!-- Tetris Button -->
                     <a href="https://storage.googleapis.com/danieladickey-tetris-bucket/Tetris/index.html"
                         target="_blank" class="btn btn-primary" style="background-color:#539A7F; border:#539A7F">Try
                         Tetris</a>
+                </div>
+
+                <div class="card-footer">
+                    JavaScript, Canvas, Bootstrap, HTML, CSS
                 </div>
             </div>
 
@@ -91,14 +94,17 @@
                 <div class="card-body">
                     <h5 class="card-title">Lunar Lander</h5>
 
-                    <p class="card-text">Daniel used JavaScript, Canvas, HTML, CSS, and Bootstrap to remake an old
-                        classic. This 2D simulator features physics, randomly generated terrain, sound, customizable
-                        controls, particle effects, and high scores stored locally in the browser. </p>
+                    <p class="card-text">A remake an old classic. This 2D simulator features physics, randomly generated
+                        terrain, sound, customizable controls, particle effects, and high scores stored locally in the
+                        browser. The score is based on the fuel remaining upon a successful landing.</p>
 
                     <!-- Lunar Lander Button -->
                     <a href="https://storage.googleapis.com/danieladickey-lunarlander-bucket/Lunar%20Lander/index.html"
                         target="_blank" class="btn btn-primary" style="background-color:#539A7F; border:#539A7F">Pilot
                         the lander</a>
+                </div>
+                <div class="card-footer">
+                    JavaScript, Canvas, Bootstrap, HTML, CSS
                 </div>
             </div>
 
@@ -114,12 +120,101 @@
                         before beginning the game. It uses Prim's algorithm to produce a random maze. It also utilizes a
                         depth-first recursive algorithm to solve the maze. The solution is calculated each time the user
                         moves so that the user can be provided with a hint of what move to make next or see the entire
-                        path from their current position to the end. The game was made using Javascript, Canvas, HTML,
-                        and CSS. </p>
+                        path from their current position to the end.</p>
 
                     <!-- Maze Button -->
                     <a href="https://storage.googleapis.com/danieladickey-maze-bucket/Maze/index.html" target="_blank"
                         class="btn btn-primary" style="background-color:#539A7F; border:#539A7F">Find your way</a>
+                </div>
+                <div class="card-footer">
+                    JavaScript, Canvas, HTML, CSS
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Deck - TWO -->
+        <div class="card-deck">
+
+            <!-- Fundraiser Auction Card-->
+            <div class="card bg-light mb-3">
+
+                <!-- Image -->
+                <img class="card-img-top" src="./images/no_image.jpg" alt="Screenshot of Fundraiser Auction">
+                <div class="card-body">
+                    <h5 class="card-title">Fundraiser Auction Website</h5>
+
+                    <p class="card-text">This was a group project from USU's Intro to Software Engineering course.
+                        Daniel and the other students were learning about Scrum, collecting requirements, making
+                        prototypes, and creating a use case chart, project plan, activity diagram, and class diagram.
+                        The assignment was to create an auction website to help raise money for the instructor's kid's
+                        school. The group consisted of four students. All took turns being the scrum master and updating
+                        the burndown chart. The group practiced having a daily scrum, working in sprints, and using
+                        GitHub for pull requests and tracking issues. The students in this group chose to work with
+                        Djanga since everyone had prior experience. Daniel worked mainly on the view. Using HTML,
+                        vanilla CSS, and JavaScript, he created the UI based on the design from earlier prototypes made
+                        by the team. He also helped with the controller using Python and the model in SQLite.</p>
+
+                    <!-- Fundraiser Auction Button -->
+                    <a href="https://github.com/danieladickey/Auction" target="_blank" class="btn btn-primary"
+                        style="background-color:#539A7F; border:#539A7F">Make a bid</a>
+                </div>
+
+                <div class="card-footer">
+                    Scrum, HTML, CSS, JavaScript, Django, Python, MVC, Git, GitHub, SQLite
+                </div>
+            </div>
+
+            <!-- Bee AI -->
+            <div class="card bg-light mb-3">
+
+                <!-- Image -->
+                <img class="card-img-top" src="./images/no_image.jpg"
+                    alt="Screenshot of AI for detecting bee presence, from either image or audio">
+                <div class="card-body">
+                    <h5 class="card-title">Bee AI</h5>
+
+                    <p class="card-text">Using audio clips of ambient sound, crickets chirping or bees buzzing from
+                        three different data sets. Daniel trained one single convolutional neural network (CNN) on all
+                        three data sets. He trained three individual CNNs on one data set each and then used the three
+                        CNNs to create an ensemble. He tried five different types of ensembles. TFLearn was used to
+                        design the CNNs, pickle to save the models, and TensorFlow was used to train, validate, and
+                        test. The Random Forest used the sklearn library. The training was accomplished on Google Colab
+                        to utilize their graphics cards to speed up training. The CNN, five ensembles, and a random
+                        forest (RF) were all compared against each other to see who was the most accurate. After
+                        training the AIs, they were tested to see which could more accurately identify that type of
+                        audio clip correctly. Surprisingly the single CNN beat out all the ensembles and the RF.</p>
+
+                    <!-- Bee AI Button -->
+                    <a href="https://github.com/danieladickey/BeeAI" target="_blank" class="btn btn-primary"
+                        style="background-color:#539A7F; border:#539A7F">Detect bees</a>
+                </div>
+                <div class="card-footer">
+                    Python, NumPy, Tensor Flow, TF Learn, pickle, Google Colab
+                </div>
+            </div>
+
+            <!-- Bus tracking Android app Card -->
+            <div class="card bg-light mb-3">
+
+                <!-- Image -->
+                <img class="card-img-top" src="./images/no_image.jpg" alt="Screenshot of Bus tracking Android app">
+                <div class="card-body">
+                    <h5 class="card-title">Bus Tracking Android App</h5>
+
+                    <p class="card-text">A native Android app for tracking the Cache Valley Transit District (CVTD)
+                        buses in Cache Valley, Utah. At regular intervals, XML data is retrieved and parsed from where
+                        CVTD stores the most recent GPS data online. The app updates the icons of the buses' positions
+                        on the map using Mapbox's SDK. Android OS provides the GPS location of the user to be displayed
+                        on the map. Banner ads are incorporated via Google Mobile Ads for app monetization. Now citizens
+                        of Cache Valley won't miss the bus ever again.
+                    </p>
+
+                    <!-- Bus tracking Android app Button -->
+                    <a href="https://github.com/danieladickey/BusTrackingApp" target="_blank" class="btn btn-primary"
+                        style="background-color:#539A7F; border:#539A7F">Catch the bus</a>
+                </div>
+                <div class="card-footer">
+                    Kotlin, MapBox, Material Design, XML, Google AdMob, Gradle
                 </div>
             </div>
         </div>
