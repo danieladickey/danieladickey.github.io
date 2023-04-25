@@ -1,9 +1,0 @@
-[submodule "Maze"]
-	path = Maze
-	url = https://github.com/danieladickey/Maze.git
-[submodule "LunarLander"]
-	path = LunarLander
-	url = https://github.com/danieladickey/LunarLander.git
-[submodule "Tetris"]
-	path = Tetris
-	url = https://github.com/danieladickey/Tetris.git
