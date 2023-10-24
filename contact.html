@@ -7,15 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- SEO meta tags -->
-    <meta name="description" content="Daniel A Dickey's personal website and portfolio of software development">
-    <meta name="keywords"
-        content="Software Engineer, DevOps, Software Programmer, Software Developer, Portfolio, Daniel A Dickey, Resume, Backend development, web dev, website development">
-    <meta name="author" content="Daniel A Dickey">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/color.css">
+
 
     <!--  Icon  -->
     <link href="images/favicon/favicon.ico" rel="icon">
@@ -27,9 +26,9 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-dark" style="background:#539A7F">
-        <div class="container" style="padding: 0;">
-            <a class="navbar-brand " href="./index.html"><img src="images/logos/logo_nobg_dad.png" height="25"
+    <nav class="navbar navbar-expand-md navbar-dark mb-5 color1">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html"><img src="images/logos/logo_nobg_dad.png" height="25"
                     class="d-inline-block align-text-top"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +37,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home</a>
-                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="./blog.html">Blog</a>
@@ -68,22 +63,21 @@
     </nav>
 
 
-    <div style="padding: 2em;">
+    <div class="container">
+        <!-- Image -->
+        <img class="img-fluid" src="./images/clip_art/contact.png" alt="Business card stock photo">
+        <div class="card-body text-center">
+            <h2 class="card-title mt-4">Daniel's Contact Information</h2>
+            <p class="card-text"></p>
+        </div>
 
         <!-- Contact Card -->
-        <div class="mb-3 mx-auto" style="width: 18rem;">
-
-            <!-- Image -->
-            <img class="card-img-top" src="./images/clip_art/contact.png" alt="Contact card clipart">
-            <div class="card-body text-center">
-                <h5 class="card-title">Contact</h5>
-                <p class="card-text"></p>
-            </div>
+        <div class="mx-auto" style="width: 18rem;">
 
             <!-- Email Button -->
             <div class="card-body text-center">
                 <a href="mailto:danieladickey@gmail.com?subject=Your Website&body=Daniel,%0D%0A%0D%0AI'm contacting you about your website."
-                    target="_blank" class="btn btn-primary btn-block"
+                    target="_blank" class="btn btn-success btn-block"
                     style="background-color:#539A7F; border:#539A7F"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                         height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16"
                         style="background-color:#539A7F; border:#539A7F">
@@ -96,7 +90,7 @@
 
             <!-- LinkedIn Button -->
             <div class="card-body text-center">
-                <a href="https://www.linkedin.com/in/danieladickey/" target="_blank" class="btn btn-primary btn-block"
+                <a href="https://www.linkedin.com/in/danieladickey/" target="_blank" class="btn btn-success btn-block"
                     style="background-color:#539A7F; border:#539A7F"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                         height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"
                         style="background-color:#539A7F; border:#539A7F">
@@ -107,7 +101,7 @@
 
             <!-- GitHub Button -->
             <div class="card-body text-center">
-                <a href="https://github.com/danieladickey" target="_blank" class="btn btn-primary btn-block"
+                <a href="https://github.com/danieladickey" target="_blank" class="btn btn-success btn-block"
                     style="background-color:#539A7F; border:#539A7F"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                         height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                         <path
