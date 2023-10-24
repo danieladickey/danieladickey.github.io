@@ -1,0 +1,75 @@
+/* Theme Color #1 */
+.color1 {
+    color: #539A7F;
+    background-color: #539A7F;
+    border: #539A7F
+}
+
+.colorText1 {
+    color: #539A7F;
+}
+
+.colorBackground1 {
+    background-color: #539A7F;
+}
+
+.colorBorder1 {
+    border: #539A7F
+}
+
+/* Theme Color #2 */
+.color2 {
+    color: #4276AB;
+    background-color: #4276AB;
+    border: #4276AB
+}
+
+.colorText2 {
+    color: #4276AB;
+}
+
+.colorBackground2 {
+    background-color: #4276AB;
+}
+
+.colorBorder2 {
+    border: #4276AB
+}
+
+/* White */
+.colorWhite {
+    color: #ffffff;
+    background-color: #ffffff;
+    border: #ffffff
+}
+
+.colorTextWhite {
+    color: #ffffff;
+}
+
+.colorBackgroundWhite {
+    background-color: #ffffff;
+}
+
+.colorBorderWhite {
+    border: #ffffff
+}
+
+/* Black */
+.colorBlack {
+    color: #000000;
+    background-color: #000000;
+    border: #000000
+}
+
+.colorTextBlack {
+    color: #000000;
+}
+
+.colorBackgroundBlack {
+    background-color: #000000;
+}
+
+.colorBorderBlack {
+    border: #000000
+}
