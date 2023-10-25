@@ -1,75 +1,71 @@
-/* Theme Color #1 */
-.color1 {
-    color: #539A7F;
+/* Primary theme color */
+.color-all-theme-primary {
     background-color: #539A7F;
     border: #539A7F
 }
 
-.colorText1 {
+.color-text-theme-primary {
     color: #539A7F;
 }
 
-.colorBackground1 {
+.color-background-theme-primary {
     background-color: #539A7F;
 }
 
-.colorBorder1 {
+.color-border-theme-primary {
     border: #539A7F
 }
 
-/* Theme Color #2 */
-.color2 {
-    color: #4276AB;
+/* Secondary theme color */
+.color-all-theme-secondary {
     background-color: #4276AB;
     border: #4276AB
 }
 
-.colorText2 {
+.color-text-theme-secondary {
     color: #4276AB;
 }
 
-.colorBackground2 {
+.color-background-theme-secondary {
     background-color: #4276AB;
 }
 
-.colorBorder2 {
+.color-border-theme-secondary {
     border: #4276AB
 }
 
 /* White */
-.colorWhite {
-    color: #ffffff;
+.color-all-white {
     background-color: #ffffff;
     border: #ffffff
 }
 
-.colorTextWhite {
+.color-text-white {
     color: #ffffff;
 }
 
-.colorBackgroundWhite {
+.color-background-white {
     background-color: #ffffff;
 }
 
-.colorBorderWhite {
+.color-border-white {
     border: #ffffff
 }
 
 /* Black */
-.colorBlack {
-    color: #000000;
+.color-all-black {
     background-color: #000000;
     border: #000000
 }
 
-.colorTextBlack {
+.color-text-black {
     color: #000000;
 }
 
-.colorBackgroundBlack {
+.color-background-black {
     background-color: #000000;
 }
 
-.colorBorderBlack {
+.color-border-black {
     border: #000000
 }
