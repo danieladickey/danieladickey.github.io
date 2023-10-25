@@ -1,15 +1,15 @@
 .shadow-nav {
-    box-shadow: 0px 5px 5px dimgray;
+    box-shadow: 0px 5px 10px dimgray;
 }
 
 .shadow {
-    box-shadow: 3px 3px 3px gray;
+    box-shadow: 3px 3px 6px gray;
 }
 
 .shadow-lg {
-    box-shadow: 4px 4px 4px gray;
+    box-shadow: 4px 4px 8px gray;
 }
 
 .shadow-sm {
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 4px gray;
 }
