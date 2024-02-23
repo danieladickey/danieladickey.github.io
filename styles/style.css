@@ -1,5 +1,14 @@
+@media screen and (max-width: 600px) {
+
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 56px; /* height of sticky header */
+}
+
 .shadow-nav {
-    box-shadow: 0px 3px 6px dimgray;
+    box-shadow: 0px 2px 2px dimgray;
 }
 
 .shadow {
@@ -12,4 +21,21 @@
 
 .shadow-sm {
     box-shadow: 2px 2px 4px gray;
+}
+
+.margin-above-below {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.invisible-card {
+    border: none;
+}
+
+#contact-title {
+    padding-left: 12px;
+}
+
+.padding-0 {
+    padding: 0;
 }
