@@ -1,7 +1,9 @@
 @media screen and (max-width: 767px) {}
 
 html {
+    /* scrolls smoothly to links instead of jumping straight there */
     scroll-behavior: smooth;
+    /* this offsets for the menu when clicking on link to an anchor */
     scroll-padding-top: 56px;
 }
 

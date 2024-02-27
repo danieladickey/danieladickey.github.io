@@ -12,6 +12,11 @@ const navSpacer = // duplicate of small nav logo placed on the right side to ass
 var verticalLocation = getVertLoc(); // how far down the page is the user
 var isMobile; // is the user on mobile (based on page width)
 
+// hopefully this resoles issue of smooth scroll from css not working on live website, it only works locally when testing
+window.scroll({
+    behavior: 'smooth'
+});
+
 addOrRemoveSpacer(); // on page load check
 adjustVisibility(); // on page load adjust visibility based on vertical max
 
