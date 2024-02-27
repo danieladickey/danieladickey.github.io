@@ -29,16 +29,19 @@
 <body>
 
     <!-- Large Logo Above Nav-->
-    <div class="container-fluid color-background-theme-primary">
-        <!-- Image -->
-        <img src="https://storage.googleapis.com/danieladickey_com/dad/images/logos/logo_square_name.png"
-            class="img-fluid mx-auto d-block px-3" alt="D.A.D. circular logo">
-    </div>
+    <section id="header" class="container-fluid color-background-theme-primary">
+        <a href="./index.html">
+            <!-- Image -->
+            <img src="https://storage.googleapis.com/danieladickey_com/dad/images/logos/logo_square_name.png"
+                class="img-fluid mx-auto d-block px-3" alt="D.A.D. square logo">
+        </a>
+
+    </section>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-dark mb-5 color-all-theme-primary sticky-top shadow-nav">
-        <div class="container">
-            <a class="navbar-brand" href="./index.html"><img
+        <div id="nav-container" class="container">
+            <a id="nav-logo" class="navbar-brand" href="./index.html"><img
                     src="https://storage.googleapis.com/danieladickey_com/dad/images/logos/logo_nobg_dad.png"
                     height="25" class="d-inline-block align-text-top"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -47,7 +50,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mx-auto mr-auto">
 
                     <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
                         <a class="nav-link" href="#welcome">Welcome</a>
@@ -58,7 +61,7 @@
                     </li>
 
                     <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
-                        <a class="nav-link" href="#portfolio">Portfoloio</a>
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
                     </li>
 
                     <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -75,6 +78,9 @@
 
                 </ul>
             </div>
+            <a id="nav-spacer" class="navbar-brand" href="./index.html"><img
+                    src="https://storage.googleapis.com/danieladickey_com/dad/images/logos/logo_nobg_dad.png"
+                    height="25" class="d-inline-block align-text-top"></a>
         </div>
     </nav>
 
@@ -99,7 +105,7 @@
 
         <!-- Image -->
         <img src="https://storage.googleapis.com/danieladickey_com/dad/images/photos/daniel.png"
-            class="img-fluid mx-auto d-block" alt="Photo of Daniel with his wife, Nicole">
+            class="img-fluid mx-auto d-block" alt="Photo of Daniel">
 
         <div class="jumbotron">
             <!-- Bio -->
@@ -108,7 +114,7 @@
                     <h1 class="display-4">About Daniel</h1>
                     <p class="text-justify">
                         As a member of The Church of Jesus Christ of Latter-day Stains, Daniel Hails from Utah, where
-                        his early days were marked by a fondness for Legos, technology, and the great outdoors.
+                        his early days were marked by a fondness for Lego, technology, and the great outdoors.
                         Following high school, his deep-rooted patriotism and intense yearning to serve motivated him to
                         enlist in the US Army, where he dedicated four years of service, including three combat
                         deployments to Iraq.
@@ -245,7 +251,7 @@
                             This collaborative endeavor embodied the essence of teamwork and software engineering. The
                             team, adeptly guided by the principles of Scrum, embarked on a multifaceted journey
                             encompassing requirement gathering, prototyping, and the creation of crucial artifacts such
-                            as use case charts, project plans, activity diagrams, and class diagrams. The roject’s
+                            as use case charts, project plans, activity diagrams, and class diagrams. The project’s
                             objective was to construct an auction website to facilitate fundraising for a local
                             elementary school.
                         </p>
@@ -266,7 +272,7 @@
 
                         <!-- Fundraiser Auction Button -->
                         <a href="https://github.com/danieladickey/Auction" target="_blank" class="btn btn-success"
-                            style="background-color:#539A7F; border:#539A7F">Make a bid</a>
+                            style="background-color:#539A7F; border:#539A7F">View the code repository</a>
                     </div>
 
                     <div class="card-footer">
@@ -314,7 +320,7 @@
 
                         <!-- Bee AI Button -->
                         <a href="https://github.com/danieladickey/BeeAI" target="_blank" class="btn btn-success"
-                            style="background-color:#539A7F; border:#539A7F">Detect bees</a>
+                            style="background-color:#539A7F; border:#539A7F">View the code repository</a>
                     </div>
                     <div class="card-footer">
                         Python, NumPy, Tensor Flow, TF Learn, pickle, Google Colab
@@ -335,7 +341,7 @@
                         <p class="card-text">
                             To empower commuters in Daniel’s hometown, he created a native Android
                             application tailored for the Cache Valley Transit District (CVTD) bus system. Aiming to
-                            simplifythe public transit experience in northern Utah, this mobile app presented an
+                            simplify the public transit experience in northern Utah, this mobile app presented an
                             agreeable solution for tracking CVTD buses with precision and timely updates. The mobile app
                             provided a comprehensive and real-time view of bus locations, ensuring users were never out
                             of touch during their commutes.
@@ -358,7 +364,7 @@
 
                         <!-- Bus tracking Android app Button -->
                         <a href="https://github.com/danieladickey/BusTrackingApp" target="_blank"
-                            class="btn btn-success" style="background-color:#539A7F; border:#539A7F">Catch the bus</a>
+                            class="btn btn-success" style="background-color:#539A7F; border:#539A7F">View the code repository</a>
                     </div>
                     <div class="card-footer">
                         Kotlin, MapBox, Material Design, XML, Google AdMob, Gradle
@@ -494,5 +500,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+
+<!-- Scripts -->
+<script src="scripts/scroll.js"></script>
 
 </html>

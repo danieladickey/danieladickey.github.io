@@ -1,12 +1,11 @@
-@media screen and (max-width: 600px) {
-
-}
+@media screen and (max-width: 767px) {}
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 56px; /* height of sticky header */
+    scroll-padding-top: 56px;
 }
 
+/* varying shadows to make objects appear 3D etc. */
 .shadow-nav {
     box-shadow: 0px 2px 2px dimgray;
 }
@@ -23,19 +22,27 @@ html {
     box-shadow: 2px 2px 4px gray;
 }
 
+/* space out sections of content for cleaner look */
 .margin-above-below {
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
+/* remove gray card border from contact info for cleaner look */
 .invisible-card {
     border: none;
 }
 
+/* Used to align the contact title with the contact buttons */
 #contact-title {
     padding-left: 12px;
 }
 
 .padding-0 {
     padding: 0;
+}
+
+/* make it invisible initially */
+.navbar-brand {
+    visibility: hidden;
 }
