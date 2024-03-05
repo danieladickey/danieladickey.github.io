@@ -68,5 +68,5 @@ function checkIfMobile() {
 // scrollY is built in scroll y 0 starts at top of screen and increases as user scrolls down
 // subtract the height of the header to get 0 base at top of the nav bar
 function getVertLoc() {
-    return scrollY - (headerHeight * 0.7);
+    return scrollY - (headerHeight * 1.2);
 }
