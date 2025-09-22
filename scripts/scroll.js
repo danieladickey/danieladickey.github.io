@@ -1,5 +1,6 @@
 // JavaScript to fade in navbar logo based on y position of page
 // Logo fades in/out based on user scrolling location
+// navbar box shadow fades in and out as well
 
 const bootStrapMobileWidth = 767; // this is set by Bootstrap 4 used to determine if screen is mobile
 const headerHeight = document.querySelector("#header").offsetHeight; // height of big logo image header
@@ -37,8 +38,12 @@ function adjustVisibility() {
     if (verticalLocation > 0) {
         document.querySelector("#nav-logo").style.opacity = verticalLocation / verticalMax;
         document.querySelector("#nav-logo").style.visibility = "visible";
+        // fades the navbar shadow
+        document.querySelector("#nav-container").parentElement.style.boxShadow = `0px 2px 2px rgb(105, 105, 105, ${verticalLocation / verticalMax})`
     } else if (verticalLocation < 0) {
         document.querySelector("#nav-logo").style.visibility = "hidden";
+        // hides the navbar shadow
+        document.querySelector("#nav-container").parentElement.style.boxShadow = `0px 2px 2px rgb(105, 105, 105, ${0})`
     }
 }
 

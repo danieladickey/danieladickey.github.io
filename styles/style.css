@@ -14,23 +14,6 @@
     }
 }
 
-/* varying shadows to make objects appear 3D etc. */
-.shadow-nav {
-    box-shadow: 0px 2px 2px dimgray;
-}
-
-.shadow {
-    box-shadow: 3px 3px 6px gray;
-}
-
-.shadow-lg {
-    box-shadow: 4px 4px 8px gray;
-}
-
-.shadow-sm {
-    box-shadow: 2px 2px 4px gray;
-}
-
 /* space out sections of content for cleaner look */
 .margin-above-below {
     margin-top: 100px;
