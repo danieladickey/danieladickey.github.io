@@ -1,0 +1,708 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BevMax 45-Slot Planogram</title>
+  <style>
+    :root { --bg:#0b0f19; --panel:#111827; --card:#0f172a; --border:#243041; --text:#e5e7eb; --muted:#9ca3af; }
+    *{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    body{margin:0;background:var(--bg);color:var(--text)}
+    header{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:center;justify-content:space-between}
+    header .title{font-size:18px;font-weight:700}
+    header .sub{font-size:12px;color:var(--muted)}
+    .wrap{display:grid;grid-template-columns:340px 1fr;gap:14px;padding:14px;max-width:1400px;margin:0 auto}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:12px;min-height:calc(100vh - 86px)}
+    .row{display:flex;gap:8px;align-items:center}
+    .row.wrap{flex-wrap:wrap}
+    label{font-size:12px;color:var(--muted)}
+    input, select, textarea, button{
+      background:#0b1220;color:var(--text);border:1px solid var(--border);
+      border-radius:10px;padding:8px 10px;font-size:14px;outline:none;
+    }
+    input[type="color"]{padding:0;width:44px;height:36px;border-radius:10px}
+    textarea{width:100%;min-height:120px;resize:vertical}
+    button{cursor:pointer}
+    button.primary{background:#2563eb;border-color:#2563eb}
+    button.danger{background:#b91c1c;border-color:#b91c1c}
+    button.ghost{background:transparent}
+    .section{margin-top:12px}
+    .section h3{margin:8px 0 10px;font-size:14px}
+    .hr{height:1px;background:var(--border);margin:10px 0}
+    .products{display:flex;flex-direction:column;gap:8px;max-height:55vh;overflow:auto;padding-right:4px}
+    .prod{
+      background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px;
+      display:flex;gap:10px;align-items:flex-start;justify-content:space-between
+    }
+    .prod .left{min-width:0}
+    .prod .name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);font-size:12px;color:var(--muted)}
+    .dot{width:10px;height:10px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
+    .prod .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+    .prod .actions{display:flex;gap:6px}
+    .gridTop{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .grid{display:grid;gap:10px;margin-top:10px}
+    .tile{
+      background:var(--card);border:1px solid var(--border);border-radius:16px;padding:10px;min-height:112px;
+      display:flex;flex-direction:column;gap:8px
+    }
+    .tileHeader{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .badge{
+      padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px;color:white;border:1px solid rgba(255,255,255,.15)
+    }
+    .tile .slotLabel{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .tile .prodName{font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .tile .inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .tile .inputs input{width:100%;padding:7px 8px;border-radius:10px}
+    .small{font-size:12px;color:var(--muted)}
+    dialog{border:none;border-radius:16px;background:var(--panel);color:var(--text);padding:12px;max-width:720px;width:90vw}
+    dialog::backdrop{background:rgba(0,0,0,.6)}
+    .dlgTitle{font-weight:800;margin:4px 0 8px}
+    .dlgActions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;flex-wrap:wrap}
+    .hint{font-size:12px;color:var(--muted);line-height:1.4}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;border:1px solid var(--border);padding:1px 6px;border-radius:8px}
+  </style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="title">BevMax Planogram</div>
+    <div class="sub">Drag a product onto a slot. Drag a slot to another to swap. Default grid: 9×5 = 45.</div>
+  </div>
+  <div class="row wrap">
+    <button id="btnExportJson">Export JSON</button>
+    <button id="btnExportCsv">Export CSV</button>
+    <button id="btnImport">Import JSON</button>
+    <button id="btnQuickFill">Quick fill</button>
+    <button id="btnReset" class="danger">Reset</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- Left panel -->
+  <aside class="panel">
+    <div class="row" style="justify-content:space-between">
+      <div style="font-weight:800">Products</div>
+      <button id="btnAdd" class="primary">+ Add</button>
+    </div>
+
+    <div class="section">
+      <label>Filter</label>
+      <div class="row" style="margin-top:6px">
+        <select id="categoryFilter" style="flex:1">
+          <option value="All">All</option>
+          <option>Energy</option><option>Soda</option><option>Water</option><option>Sports</option>
+          <option>Juice</option><option>Tea</option><option>Coffee</option><option>Other</option>
+        </select>
+        <input id="search" style="flex:1" placeholder="Search…" />
+      </div>
+    </div>
+
+    <div class="section">
+      <label>Default title color (fallback)</label>
+      <div class="row" style="margin-top:6px">
+        <input id="defaultTitleColor" type="color" />
+        <input id="defaultTitleHex" placeholder="#RRGGBB" style="flex:1" />
+      </div>
+      <div class="hint" style="margin-top:6px">
+        Each tile title uses the <b>product color</b> (Coke red, Monster green). This fallback is used if a product has no color.
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="products" id="products"></div>
+
+    <div class="hr"></div>
+    <div class="hint">
+      Tips:
+      <ul>
+        <li>Drag product → slot assigns it.</li>
+        <li>Drag slot → slot swaps products.</li>
+        <li>Export JSON for backups; Import replaces current data.</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Right panel -->
+  <main class="panel">
+    <div class="gridTop">
+      <div>
+        <div style="font-weight:800">Selections</div>
+        <div class="small">Grid is row-major; cell codes are A1..</div>
+      </div>
+      <div class="row wrap">
+        <div>
+          <label>Columns</label><br/>
+          <input id="cols" type="number" min="1" max="20" style="width:90px" />
+        </div>
+        <div>
+          <label>Rows</label><br/>
+          <input id="rows" type="number" min="1" max="20" style="width:90px" />
+        </div>
+        <div style="margin-top:18px">
+          <label class="row" style="gap:8px;cursor:pointer">
+            <input id="showIds" type="checkbox" />
+            Show slot IDs
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<!-- Product editor dialog -->
+<dialog id="dlgProduct">
+  <div class="dlgTitle" id="dlgTitle">Add Product</div>
+  <div class="row" style="gap:10px;flex-wrap:wrap">
+    <div style="flex:1;min-width:240px">
+      <label>Name</label>
+      <input id="pName" placeholder="e.g., Coke (12oz)" style="width:100%;margin-top:6px" />
+    </div>
+    <div style="width:160px">
+      <label>Category</label>
+      <select id="pCategory" style="width:100%;margin-top:6px">
+        <option>Energy</option><option>Soda</option><option>Water</option><option>Sports</option>
+        <option>Juice</option><option>Tea</option><option>Coffee</option><option>Other</option>
+      </select>
+    </div>
+    <div style="width:140px">
+      <label>Size (oz)</label>
+      <input id="pSize" placeholder="12" style="width:100%;margin-top:6px" />
+    </div>
+  </div>
+
+  <div class="section">
+    <label>Color</label>
+    <div class="row" style="margin-top:6px">
+      <input id="pColor" type="color" />
+      <input id="pColorHex" placeholder="#RRGGBB" style="flex:1" />
+    </div>
+  </div>
+
+  <div class="section">
+    <label>Notes</label>
+    <textarea id="pNotes" placeholder="Optional" style="margin-top:6px"></textarea>
+  </div>
+
+  <div class="dlgActions">
+    <button id="btnCancel" class="ghost">Cancel</button>
+    <button id="btnSave" class="primary">Save</button>
+  </div>
+</dialog>
+
+<!-- Import dialog -->
+<dialog id="dlgImport">
+  <div class="dlgTitle">Import JSON</div>
+  <div class="hint">Paste JSON exported from this page. Import replaces your current data.</div>
+  <textarea id="importText" style="margin-top:8px"></textarea>
+  <div class="dlgActions">
+    <button id="btnImportCancel" class="ghost">Cancel</button>
+    <button id="btnImportApply" class="primary">Import</button>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const STORAGE_KEY = "bevmax_planogram_html_v1";
+  const CATEGORIES = ["Energy","Soda","Water","Sports","Juice","Tea","Coffee","Other"];
+
+  const $ = (id) => document.getElementById(id);
+  const isHex = (v) => typeof v === "string" && /^#[0-9a-fA-F]{6}$/.test(v);
+  const uid = (p="p") => `${p}_${Math.random().toString(16).slice(2)}_${Date.now().toString(16)}`;
+  const clampInt = (v,min,max,fb) => {
+    const n = parseInt(String(v),10);
+    if (Number.isNaN(n)) return fb;
+    return Math.min(max, Math.max(min,n));
+  };
+  const cellCode = (index, cols) => {
+    const colLetter = String.fromCharCode("A".charCodeAt(0) + (index % cols));
+    const rowNum = Math.floor(index / cols) + 1;
+    return `${colLetter}${rowNum}`;
+  };
+  const downloadText = (filename, text) => {
+    const blob = new Blob([text], {type:"text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 500);
+  };
+  const toCSV = (rows) => rows.map(r => r.map(v => {
+    const s = String(v ?? "");
+    return /[\n\r,"]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s;
+  }).join(",")).join("\n");
+
+  function defaultState(){
+    const products = [
+      { id: uid(), name:"Coke (12oz)", category:"Soda", sizeOz:12, color:"#dc2626", notes:"" },
+      { id: uid(), name:"Diet Coke (12oz)", category:"Soda", sizeOz:12, color:"#111827", notes:"" },
+      { id: uid(), name:"Monster (16oz)", category:"Energy", sizeOz:16, color:"#16a34a", notes:"" },
+      { id: uid(), name:"Red Bull (12oz)", category:"Energy", sizeOz:12, color:"#b91c1c", notes:"" },
+      { id: uid(), name:"Water (16.9oz)", category:"Water", sizeOz:16.9, color:"#2563eb", notes:"" },
+    ];
+    const cols = 9, rows = 5;
+    const selections = Array.from({length: cols*rows}, (_,i)=>({
+      id: `s_${i+1}`,
+      label: `S${i+1}`,
+      productId: null,
+      price: "",
+      par: "",
+      notes: "",
+    }));
+    return {
+      version: 1,
+      machine: { name:"Dixie Narco BevMax", cols, rows },
+      products,
+      selections,
+      ui: { categoryFilter:"All", search:"", showIds:false, defaultTitleColor:"#0f172a" }
+    };
+  }
+
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return defaultState();
+      const s = JSON.parse(raw);
+      if(!s || typeof s !== "object") return defaultState();
+      if(!s.machine?.cols || !s.machine?.rows) s.machine = {name:"BevMax", cols:9, rows:5};
+      if(!Array.isArray(s.products)) s.products = [];
+      if(!Array.isArray(s.selections)) s.selections = [];
+      if(!s.ui) s.ui = { categoryFilter:"All", search:"", showIds:false, defaultTitleColor:"#0f172a" };
+      if(!isHex(s.ui.defaultTitleColor)) s.ui.defaultTitleColor = "#0f172a";
+      s.products = s.products.map(p => ({...p, color: isHex(p?.color) ? p.color : "#0f172a"}));
+      // ensure selection count matches grid
+      const target = s.machine.cols * s.machine.rows;
+      if(s.selections.length < target){
+        for(let i=s.selections.length;i<target;i++){
+          s.selections.push({id:`s_${i+1}`, label:`S${i+1}`, productId:null, price:"", par:"", notes:""});
+        }
+      } else if (s.selections.length > target){
+        s.selections = s.selections.slice(0, target);
+      }
+      return s;
+    }catch{
+      return defaultState();
+    }
+  }
+
+  let state = loadState();
+  const productById = () => new Map(state.products.map(p => [p.id, p]));
+  let drag = null; // {type:'product'|'slot', id}
+
+  // UI elements
+  const elProducts = $("products");
+  const elGrid = $("grid");
+  const elCategory = $("categoryFilter");
+  const elSearch = $("search");
+  const elCols = $("cols");
+  const elRows = $("rows");
+  const elShowIds = $("showIds");
+  const elDefaultColor = $("defaultTitleColor");
+  const elDefaultHex = $("defaultTitleHex");
+
+  // dialogs
+  const dlgProduct = $("dlgProduct");
+  const dlgImport = $("dlgImport");
+
+  // product editor fields
+  const dlgTitle = $("dlgTitle");
+  const pName = $("pName");
+  const pCategory = $("pCategory");
+  const pSize = $("pSize");
+  const pColor = $("pColor");
+  const pColorHex = $("pColorHex");
+  const pNotes = $("pNotes");
+
+  let editing = null; // product object
+
+  function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+  function setState(patch){
+    state = typeof patch === "function" ? patch(state) : {...state, ...patch};
+    save();
+    render();
+  }
+
+  function setUI(patch){
+    setState(s => ({...s, ui:{...s.ui, ...patch}}));
+  }
+
+  function filteredProducts(){
+    const q = (state.ui.search || "").trim().toLowerCase();
+    return state.products
+      .filter(p => state.ui.categoryFilter === "All" ? true : p.category === state.ui.categoryFilter)
+      .filter(p => q ? (p.name||"").toLowerCase().includes(q) || (p.notes||"").toLowerCase().includes(q) : true)
+      .sort((a,b)=>(a.category+a.name).localeCompare(b.category+b.name));
+  }
+
+  function resizeGrid(cols, rows){
+    cols = clampInt(cols,1,20,state.machine.cols);
+    rows = clampInt(rows,1,20,state.machine.rows);
+    setState(s => {
+      const target = cols*rows;
+      let selections = [...s.selections];
+      if(target > selections.length){
+        for(let i=selections.length;i<target;i++){
+          selections.push({id:`s_${i+1}`, label:`S${i+1}`, productId:null, price:"", par:"", notes:""});
+        }
+      } else if(target < selections.length){
+        selections = selections.slice(0,target);
+      }
+      return {...s, machine:{...s.machine, cols, rows}, selections};
+    });
+  }
+
+  function openProductEditor(prod){
+    editing = prod ? {...prod} : { id: uid(), name:"", category:"Energy", sizeOz:"", color:"#0f172a", notes:"" };
+    dlgTitle.textContent = prod ? "Edit Product" : "Add Product";
+    pName.value = editing.name || "";
+    pCategory.value = editing.category || "Energy";
+    pSize.value = editing.sizeOz ?? "";
+    pColor.value = isHex(editing.color) ? editing.color : "#0f172a";
+    pColorHex.value = isHex(editing.color) ? editing.color : "#0f172a";
+    pNotes.value = editing.notes || "";
+    dlgProduct.showModal();
+  }
+
+  function upsertProduct(prod){
+    setState(s => {
+      const exists = s.products.some(p => p.id === prod.id);
+      const products = exists ? s.products.map(p => p.id===prod.id ? prod : p) : [prod, ...s.products];
+      return {...s, products};
+    });
+  }
+
+  function deleteProduct(id){
+    setState(s => ({
+      ...s,
+      products: s.products.filter(p=>p.id!==id),
+      selections: s.selections.map(sel => sel.productId===id ? {...sel, productId:null} : sel)
+    }));
+  }
+
+  function setSelection(id, patch){
+    setState(s => ({
+      ...s,
+      selections: s.selections.map(sel => sel.id===id ? {...sel, ...patch} : sel)
+    }));
+  }
+
+  function onDropOnSlot(targetId){
+    if(!drag) return;
+    if(drag.type === "product"){
+      setSelection(targetId, {productId: drag.id});
+    } else if(drag.type === "slot"){
+      if(drag.id === targetId) return;
+      setState(s => {
+        const a = s.selections.find(x=>x.id===drag.id);
+        const b = s.selections.find(x=>x.id===targetId);
+        if(!a||!b) return s;
+        const selections = s.selections.map(x => {
+          if(x.id===a.id) return {...x, productId: b.productId};
+          if(x.id===b.id) return {...x, productId: a.productId};
+          return x;
+        });
+        return {...s, selections};
+      });
+    }
+    drag = null;
+  }
+
+  function exportJSON(){ downloadText("bevmax-planogram.json", JSON.stringify(state,null,2)); }
+  function exportCSV(){
+    const map = productById();
+    const header = ["Cell","SelectionLabel","Product","Category","ProductColor","SizeOz","Price","Par","Notes"];
+    const body = state.selections.map((sel,i)=>{
+      const p = sel.productId ? map.get(sel.productId) : null;
+      return [cellCode(i,state.machine.cols), sel.label, p?.name||"", p?.category||"", p?.color||"", p?.sizeOz??"", sel.price, sel.par, sel.notes];
+    });
+    downloadText("bevmax-planogram.csv", toCSV([header, ...body]));
+  }
+
+  function quickFill(){
+    if(state.products.length===0) return;
+    setState(s => ({
+      ...s,
+      selections: s.selections.map((sel,i)=>({...sel, productId: s.products[i % s.products.length].id}))
+    }));
+  }
+
+  function resetAll(){
+    if(!confirm("Reset everything to defaults?")) return;
+    state = defaultState();
+    save();
+    render();
+  }
+
+  function applyImport(text){
+    try{
+      const parsed = JSON.parse(text);
+      if(!parsed || typeof parsed !== "object") throw new Error("Invalid JSON");
+      if(!Array.isArray(parsed.products) || !Array.isArray(parsed.selections)) throw new Error("Missing products/selections");
+      if(!parsed.machine?.cols || !parsed.machine?.rows) throw new Error("Missing machine config");
+
+      parsed.ui = parsed.ui || {};
+      if(!isHex(parsed.ui.defaultTitleColor)) parsed.ui.defaultTitleColor = "#0f172a";
+      parsed.products = parsed.products.map(p => ({...p, color: isHex(p?.color) ? p.color : "#0f172a"}));
+
+      state = {
+        version: 1,
+        machine: { name: parsed.machine.name || "BevMax", cols: clampInt(parsed.machine.cols,1,20,9), rows: clampInt(parsed.machine.rows,1,20,5) },
+        products: parsed.products,
+        selections: parsed.selections,
+        ui: { categoryFilter:"All", search:"", showIds:false, defaultTitleColor: parsed.ui.defaultTitleColor }
+      };
+      // normalize selection count
+      const target = state.machine.cols * state.machine.rows;
+      if(state.selections.length < target){
+        for(let i=state.selections.length;i<target;i++){
+          state.selections.push({id:`s_${i+1}`, label:`S${i+1}`, productId:null, price:"", par:"", notes:""});
+        }
+      } else if(state.selections.length > target){
+        state.selections = state.selections.slice(0,target);
+      }
+
+      save();
+      render();
+      dlgImport.close();
+      $("importText").value = "";
+    }catch(e){
+      alert("Import failed: " + (e?.message || e));
+    }
+  }
+
+  function render(){
+    // top controls
+    elCategory.value = state.ui.categoryFilter;
+    elSearch.value = state.ui.search;
+    elCols.value = state.machine.cols;
+    elRows.value = state.machine.rows;
+    elShowIds.checked = !!state.ui.showIds;
+    elDefaultColor.value = isHex(state.ui.defaultTitleColor) ? state.ui.defaultTitleColor : "#0f172a";
+    elDefaultHex.value = isHex(state.ui.defaultTitleColor) ? state.ui.defaultTitleColor : "#0f172a";
+
+    // products list
+    const prods = filteredProducts();
+    elProducts.innerHTML = "";
+    for(const p of prods){
+      const item = document.createElement("div");
+      item.className = "prod";
+      item.draggable = true;
+      item.addEventListener("dragstart", () => { drag = {type:"product", id:p.id}; });
+      item.addEventListener("dragend", () => { drag = null; });
+
+      const left = document.createElement("div");
+      left.className = "left";
+      const nm = document.createElement("div");
+      nm.className = "name";
+      nm.textContent = p.name || "(Unnamed product)";
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      const pill1 = document.createElement("span");
+      pill1.className = "pill";
+      const dot = document.createElement("span");
+      dot.className = "dot";
+      dot.style.background = isHex(p.color) ? p.color : "#0f172a";
+      pill1.appendChild(dot);
+      pill1.appendChild(document.createTextNode(p.category));
+
+      const pill2 = document.createElement("span");
+      pill2.className = "pill";
+      pill2.textContent = (p.sizeOz ?? "") !== "" ? `${p.sizeOz}oz` : "—";
+
+      meta.appendChild(pill1);
+      meta.appendChild(pill2);
+
+      if(p.notes){
+        const notes = document.createElement("div");
+        notes.className = "small";
+        notes.style.marginTop = "6px";
+        notes.textContent = p.notes;
+        left.appendChild(nm);
+        left.appendChild(meta);
+        left.appendChild(notes);
+      } else {
+        left.appendChild(nm);
+        left.appendChild(meta);
+      }
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+      const btnE = document.createElement("button");
+      btnE.textContent = "Edit";
+      btnE.addEventListener("click", (e)=>{ e.stopPropagation(); openProductEditor(p); });
+
+      const btnD = document.createElement("button");
+      btnD.textContent = "Del";
+      btnD.className = "danger";
+      btnD.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        if(confirm(`Delete product "${p.name}"? This will clear it from any slots.`)) deleteProduct(p.id);
+      });
+
+      actions.appendChild(btnE);
+      actions.appendChild(btnD);
+
+      item.appendChild(left);
+      item.appendChild(actions);
+      elProducts.appendChild(item);
+    }
+
+    // grid
+    elGrid.style.gridTemplateColumns = `repeat(${state.machine.cols}, minmax(0, 1fr))`;
+    elGrid.innerHTML = "";
+    const map = productById();
+    const fallback = isHex(state.ui.defaultTitleColor) ? state.ui.defaultTitleColor : "#0f172a";
+
+    state.selections.forEach((sel, idx) => {
+      const p = sel.productId ? map.get(sel.productId) : null;
+      const titleColor = isHex(p?.color) ? p.color : fallback;
+
+      const tile = document.createElement("div");
+      tile.className = "tile";
+      tile.draggable = true;
+
+      tile.addEventListener("dragstart", ()=>{ drag = {type:"slot", id: sel.id}; });
+      tile.addEventListener("dragend", ()=>{ drag = null; });
+      tile.addEventListener("dragover", (e)=>e.preventDefault());
+      tile.addEventListener("drop", ()=>onDropOnSlot(sel.id));
+
+      const header = document.createElement("div");
+      header.className = "tileHeader";
+
+      const badge = document.createElement("div");
+      badge.className = "badge";
+      badge.textContent = cellCode(idx, state.machine.cols);
+      badge.style.background = titleColor;
+      badge.style.borderColor = titleColor;
+
+      const slotLabel = document.createElement("div");
+      slotLabel.className = "slotLabel";
+      slotLabel.textContent = state.ui.showIds ? sel.id : sel.label;
+
+      header.appendChild(badge);
+      header.appendChild(slotLabel);
+
+      const prodName = document.createElement("div");
+      prodName.className = "prodName";
+      prodName.innerHTML = p ? escapeHtml(p.name) : "<span class='small'>(Empty)</span>";
+
+      const inputs = document.createElement("div");
+      inputs.className = "inputs";
+
+      const inPrice = document.createElement("input");
+      inPrice.placeholder = "Price";
+      inPrice.value = sel.price || "";
+      inPrice.addEventListener("input", ()=>setSelection(sel.id, {price: inPrice.value}));
+
+      const inPar = document.createElement("input");
+      inPar.placeholder = "Par";
+      inPar.value = sel.par || "";
+      inPar.addEventListener("input", ()=>setSelection(sel.id, {par: inPar.value}));
+
+      const inNotes = document.createElement("input");
+      inNotes.placeholder = "Notes";
+      inNotes.value = sel.notes || "";
+      inNotes.addEventListener("input", ()=>setSelection(sel.id, {notes: inNotes.value}));
+
+      inputs.appendChild(inPrice);
+      inputs.appendChild(inPar);
+      inputs.appendChild(inNotes);
+
+      const row2 = document.createElement("div");
+      row2.className = "row";
+      row2.style.justifyContent = "space-between";
+
+      const small = document.createElement("div");
+      small.className = "small";
+      if(p){
+        small.textContent = `${p.category}${(p.sizeOz??"")!=="" ? ` • ${p.sizeOz}oz` : ""}`;
+      } else {
+        small.textContent = "Drop a product here";
+      }
+
+      const btnClear = document.createElement("button");
+      btnClear.textContent = "Clear";
+      btnClear.className = "ghost";
+      btnClear.disabled = !sel.productId;
+      btnClear.style.opacity = sel.productId ? 1 : .4;
+      btnClear.addEventListener("click", ()=>setSelection(sel.id, {productId:null}));
+
+      row2.appendChild(small);
+      row2.appendChild(btnClear);
+
+      tile.appendChild(header);
+      tile.appendChild(prodName);
+      tile.appendChild(row2);
+      tile.appendChild(inputs);
+
+      elGrid.appendChild(tile);
+    });
+  }
+
+  function escapeHtml(s){
+    return String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // Wire events
+  $("btnAdd").addEventListener("click", ()=>openProductEditor(null));
+  $("btnExportJson").addEventListener("click", exportJSON);
+  $("btnExportCsv").addEventListener("click", exportCSV);
+  $("btnQuickFill").addEventListener("click", quickFill);
+  $("btnReset").addEventListener("click", resetAll);
+
+  $("btnImport").addEventListener("click", ()=>dlgImport.showModal());
+  $("btnImportCancel").addEventListener("click", ()=>dlgImport.close());
+  $("btnImportApply").addEventListener("click", ()=>applyImport($("importText").value));
+
+  elCategory.addEventListener("change", ()=>setUI({categoryFilter: elCategory.value}));
+  elSearch.addEventListener("input", ()=>setUI({search: elSearch.value}));
+  elShowIds.addEventListener("change", ()=>setUI({showIds: elShowIds.checked}));
+
+  elCols.addEventListener("input", ()=>resizeGrid(elCols.value, state.machine.rows));
+  elRows.addEventListener("input", ()=>resizeGrid(state.machine.cols, elRows.value));
+
+  elDefaultColor.addEventListener("input", ()=>setUI({defaultTitleColor: elDefaultColor.value}));
+  elDefaultHex.addEventListener("input", ()=>{
+    if(isHex(elDefaultHex.value)) setUI({defaultTitleColor: elDefaultHex.value});
+  });
+
+  // Product dialog events
+  $("btnCancel").addEventListener("click", ()=>dlgProduct.close());
+  $("btnSave").addEventListener("click", ()=>{
+    if(!editing) return;
+    const name = pName.value.trim();
+    if(!name){ alert("Name is required."); return; }
+    const color = isHex(pColorHex.value) ? pColorHex.value : (isHex(pColor.value) ? pColor.value : "#0f172a");
+    const prod = {
+      ...editing,
+      name,
+      category: CATEGORIES.includes(pCategory.value) ? pCategory.value : "Other",
+      sizeOz: pSize.value === "" ? "" : (Number.isNaN(Number(pSize.value)) ? pSize.value : Number(pSize.value)),
+      color,
+      notes: pNotes.value || ""
+    };
+    upsertProduct(prod);
+    dlgProduct.close();
+    editing = null;
+  });
+
+  // sync hex/color inputs in dialog
+  pColor.addEventListener("input", ()=>{ pColorHex.value = pColor.value; });
+  pColorHex.addEventListener("input", ()=>{
+    if(isHex(pColorHex.value)) pColor.value = pColorHex.value;
+  });
+
+  // initial render
+  render();
+})();
+</script>
+</body>
+</html>
+```
