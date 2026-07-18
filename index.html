@@ -137,6 +137,97 @@
             <!-- Card Deck ONE-->
             <div class="card-deck">
 
+                <!-- Vending Data Automation Card-->
+                <div class="card bg-light mb-3">
+
+                    <!-- Image -->
+                    <img class="card-img-top"
+                        src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
+                        alt="Screenshot of Vending Data Automation">
+                    <div class="card-body">
+                        <h5 class="card-title">Vending Data Automation</h5>
+
+                        <p class="card-text">
+                            At the time of this writing I’m working on a project to automate the pipeline
+                            that captures Violet Vending’s daily sales with zero manual work. Seed Live emails a daily
+                            transaction CSV to Gmail; a scheduled Google Cloud function picks it up, archives the raw
+                            file to Cloud Storage, and appends the data to BigQuery. The result is a growing, queryable
+                            sales history — revenue trends, product sell-through — that runs for free and scales from
+                            one machine to a full route.
+                        </p>
+
+                        <!-- Vending Data Automation Button -->
+                        <a href="https://github.com/danieladickey/seed-live-report" target="_blank" class="btn btn-success"
+                            style="background-color:#539A7F; border:#539A7F">View the code repository</a>
+                    </div>
+
+                    <div class="card-footer">
+                        Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run function, Secret Manager, Cloud Storage,
+                        BigQuery, gcloud CLI), Claude Code in VS Code, Cantaloupe Seed Live
+                    </div>
+                </div>
+
+                <!-- Violet Vending Card-->
+                <div class="card bg-light mb-3">
+
+                    <!-- Image -->
+                    <img class="card-img-top"
+                        src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/vending_website.png"
+                        alt="Screenshot of get violet vending dot com on mobile">
+                    <div class="card-body">
+                        <h5 class="card-title">Vending Website</h5>
+
+                        <p class="card-text">
+                            I used ChatGPT, Codex, Claude, and Claude Code to rapidly develop a mobile first website
+                            for my startup
+                            vending business. It provides information to potential new location hosts, as well as
+                            several forms for users to request support or new drinks and snacks.
+                        </p>
+
+                        <!-- Violet Vending Button -->
+                        <a href="https://getvioletvending.com/" target="_blank" class="btn btn-success"
+                            style="background-color:#539A7F; border:#539A7F">View the live website</a>
+                    </div>
+
+                    <div class="card-footer">
+                        Cloudflare, GitHub, git, FormSpree, ChatGPT Codex, Claude Code (React 18, React Router 6, Vite
+                        5, Tailwind CSS 3, lucide-react)
+                    </div>
+                </div>
+
+                <!-- Daniel Aaron Dickey Website Card-->
+                <div class="card bg-light mb-3">
+
+                    <!-- Image -->
+                    <img class="card-img-top"
+                        src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/personal_website.png"
+                        alt="Screenshot of this website mobile header">
+                    <div class="card-body">
+                        <h5 class="card-title">Portfolio Website</h5>
+
+                        <p class="card-text">
+                            This, my personal website, serves as my portfolio and professional home on the web. Its
+                            purpose is to give employers and collaborators a single place to get to know me —
+                            introducing my background as a full-stack software engineer and U.S. Army veteran,
+                            showcasing interactive projects, and providing quick access to my resume and contact
+                            information.
+                        </p>
+
+                        <!-- Portfolio Website Button -->
+                        <a href="./" target="_blank" class="btn btn-success"
+                            style="background-color:#539A7F; border:#539A7F">View this website</a>
+                    </div>
+
+                    <div class="card-footer">
+                        Google Domains, GitHub Pages, GCP (Cloud Storage), JavaScript, Bootstrap, HTML, CSS
+                    </div>
+                </div>
+
+            </div><!-- Card Deck ONE-->
+
+            <!-- Card Deck - TWO -->
+            <div class="card-deck">
+
                 <!-- Tetris Card-->
                 <div class="card bg-light mb-3">
 
@@ -214,7 +305,7 @@
                 </div>
             </div>
 
-            <!-- Card Deck - TWO -->
+            <!-- Card Deck - THREE -->
             <div class="card-deck">
 
                 <!-- Fundraiser Auction Card-->
@@ -229,7 +320,7 @@
 
                         <p class="card-text">
                             As part of a four-person team, I helped build a Django-based auction site for a local
-                            elementary school's fundraiser. We rotated Scrum Master duties, tracked work with burndown
+                            elementary school’s fundraiser. We rotated Scrum Master duties, tracked work with burndown
                             charts, and
                             used GitHub for version control. My focus was on the user interface and controller layer, as
                             well as building data models and automating database test loads.
