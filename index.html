@@ -462,8 +462,9 @@
     <footer class="color-background-black text-white">
 
         <!-- Copyright -->
-        <div class="text-center py-3">Copyright © 2025. All rights reserved.
+        <div class="text-center py-3">Copyright © <span id="year">2026</span>. All rights reserved.
         </div>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
     </footer>
 
