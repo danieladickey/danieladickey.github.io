@@ -1,0 +1,18 @@
+# Daniel A Dickey
+
+> Personal website of Daniel A Dickey, a full-stack software engineer in Brigham City, Utah, with a strong back-end background.
+
+Daniel earned a Bachelor of Science in Computer Science from Utah State University in 2023. He worked as a software engineer at a multinational IT consulting firm, was promoted to Senior Software Engineer, and later to Associate Consultant. He served four years in the U.S. Army, including three deployments to Iraq. He also runs Violet Vending, a snack and drink vending service in Northern Utah.
+
+## Pages
+
+- [Home, about, portfolio, resume, and contact](https://danieladickey.com/)
+- [Tetris clone](https://danieladickey.com/tetris/tetris.html): browser game written in JavaScript
+- [Lunar Lander simulation](https://danieladickey.com/lunar-lander/lunar-lander.html): browser game written in JavaScript
+- [Maze generator and solver](https://danieladickey.com/maze/maze.html): browser game written in JavaScript
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/danieladickey/)
+- [GitHub](https://github.com/danieladickey)
+- [Violet Vending](https://getvioletvending.com/)
