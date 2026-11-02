@@ -172,36 +172,8 @@
 
         <div class="container">
             <h2 class="text-center display-4">Portfolio</h2>
-            <!-- Card Deck ONE-->
+            <!-- Card Deck - ONE -->
             <div class="card-deck">
-
-                <!-- Vending Data Automation Card-->
-                <div class="card bg-light mb-3">
-
-                    <!-- Image -->
-                    <img class="card-img-top"
-                        src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
-                        alt="Screenshot of Vending Data Automation">
-                    <div class="card-body">
-                        <h3 class="card-title h5">Vending Data Automation</h3>
-
-                        <p class="card-text">
-                            At the time of this writing I’m working on a project to automate the pipeline
-                            that captures Violet Vending’s daily sales with zero manual work. Seed Live emails a daily
-                            transaction CSV to Gmail; a scheduled Google Cloud function picks it up, archives the raw
-                            file to Cloud Storage, and appends the data to BigQuery. The result is a growing, queryable
-                            sales history — revenue trends, product sell-through — that runs for free and scales from
-                            one machine to a full route. The code is in a private repository, so there’s no public
-                            link to it.
-                        </p>
-
-                    </div>
-
-                    <div class="card-footer">
-                        Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run function, Secret Manager, Cloud Storage,
-                        BigQuery, gcloud CLI), Claude Code in VS Code, Cantaloupe Seed Live
-                    </div>
-                </div>
 
                 <!-- Mynell Counting House Card-->
                 <div class="card bg-light mb-3">
@@ -228,6 +200,34 @@
 
                     <div class="card-footer">
                         Cloudflare Pages, GitHub, git, Formspree, Claude Code (Astro 7, React 19, Keystatic)
+                    </div>
+                </div>
+
+                <!-- Vending Data Automation Card-->
+                <div class="card bg-light mb-3">
+
+                    <!-- Image -->
+                    <img class="card-img-top"
+                        src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
+                        alt="Screenshot of Vending Data Automation">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Vending Data Automation</h3>
+
+                        <p class="card-text">
+                            At the time of this writing I’m working on a project to automate the pipeline
+                            that captures Violet Vending’s daily sales with zero manual work. Seed Live emails a daily
+                            transaction CSV to Gmail; a scheduled Google Cloud function picks it up, archives the raw
+                            file to Cloud Storage, and appends the data to BigQuery. The result is a growing, queryable
+                            sales history — revenue trends, product sell-through — that runs for free and scales from
+                            one machine to a full route. The code is in a private repository, so there’s no public
+                            link to it.
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer">
+                        Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run function, Secret Manager, Cloud Storage,
+                        BigQuery, gcloud CLI), Claude Code in VS Code, Cantaloupe Seed Live
                     </div>
                 </div>
 
@@ -258,6 +258,10 @@
                         5, Tailwind CSS 3, lucide-react)
                     </div>
                 </div>
+            </div>
+
+            <!-- Card Deck - TWO -->
+            <div class="card-deck">
 
                 <!-- Daniel Aaron Dickey Website Card-->
                 <div class="card bg-light mb-3">
@@ -286,11 +290,6 @@
                         Google Domains, GitHub Pages, GCP (Cloud Storage), JavaScript, Bootstrap, HTML, CSS
                     </div>
                 </div>
-
-            </div><!-- Card Deck ONE-->
-
-            <!-- Card Deck - TWO -->
-            <div class="card-deck">
 
                 <!-- Tetris Card-->
                 <div class="card bg-light mb-3">
@@ -342,6 +341,10 @@
                         JavaScript, Canvas, Bootstrap, HTML, CSS
                     </div>
                 </div>
+            </div>
+
+            <!-- Card Deck - THREE -->
+            <div class="card-deck">
 
                 <!-- Maze Card -->
                 <div class="card bg-light mb-3">
@@ -367,10 +370,6 @@
                         JavaScript, Canvas, HTML, CSS
                     </div>
                 </div>
-            </div>
-
-            <!-- Card Deck - THREE -->
-            <div class="card-deck">
 
                 <!-- Fundraiser Auction Card-->
                 <div class="card bg-light mb-3">
@@ -426,9 +425,13 @@
                         Python, NumPy, TensorFlow, TF Learn, pickle, Google Colab
                     </div>
                 </div>
+            </div>
+
+            <!-- Card Deck - FOUR -->
+            <div class="card-deck">
 
                 <!-- Bus tracking Android app Card -->
-                <div class="card bg-light mb-3">
+                <div class="card bg-light mb-3 card-single">
 
                     <!-- Image -->
                     <img class="card-img-top"
