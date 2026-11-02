@@ -209,25 +209,26 @@
                     <!-- Image -->
                     <img class="card-img-top"
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
-                        alt="Screenshot of Vending Data Automation">
+                        alt="Screenshot of the Violet Ops app">
                     <div class="card-body">
-                        <h3 class="card-title h5">Vending Data Automation</h3>
+                        <h3 class="card-title h5">Violet Ops: Vending Data Automation</h3>
 
                         <p class="card-text">
-                            At the time of this writing I’m working on a project to automate the pipeline
-                            that captures Violet Vending’s daily sales with zero manual work. Seed Live emails a daily
-                            transaction CSV to Gmail; a scheduled Google Cloud function picks it up, archives the raw
-                            file to Cloud Storage, and appends the data to BigQuery. The result is a growing, queryable
-                            sales history — revenue trends, product sell-through — that runs for free and scales from
-                            one machine to a full route. The code is in a private repository, so there’s no public
-                            link to it.
+                            Violet Ops is the software I built to run my vending business. It started as a pipeline for
+                            daily sales data. Each morning it pulls the sales report from Gmail, archives it in Cloud
+                            Storage, loads it into BigQuery, and emails me a summary of revenue, payment mix, and low
+                            stock. A mobile web app handles restocking, even with no signal, along with warehouse
+                            inventory, purchases, and mileage. Monthly reconciliation checks my sales against Cantaloupe’s
+                            records, and it all costs about $0.10 a month to run on Google Cloud. The code is in a private
+                            repository, so there’s no public link to it.
                         </p>
 
                     </div>
 
                     <div class="card-footer">
-                        Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run function, Secret Manager, Cloud Storage,
-                        BigQuery, gcloud CLI), Claude Code in VS Code, Cantaloupe Seed Live
+                        Python, React 18, Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run, Secret Manager, Cloud
+                        Storage, BigQuery, Cloud Monitoring, gcloud CLI), Looker Studio, Cantaloupe Seed Live, Claude Code
+                        in VS Code
                     </div>
                 </div>
 
