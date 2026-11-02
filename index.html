@@ -191,7 +191,8 @@
                             transaction CSV to Gmail; a scheduled Google Cloud function picks it up, archives the raw
                             file to Cloud Storage, and appends the data to BigQuery. The result is a growing, queryable
                             sales history — revenue trends, product sell-through — that runs for free and scales from
-                            one machine to a full route.
+                            one machine to a full route. The code is in a private repository, so there’s no public
+                            link to it.
                         </p>
 
                     </div>
@@ -199,6 +200,33 @@
                     <div class="card-footer">
                         Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run function, Secret Manager, Cloud Storage,
                         BigQuery, gcloud CLI), Claude Code in VS Code, Cantaloupe Seed Live
+                    </div>
+                </div>
+
+                <!-- Mynell Counting House Card-->
+                <div class="card bg-light mb-3">
+
+                    <!-- Image -->
+                    <img class="card-img-top" src="images/mynell_website.png"
+                        alt="Screenshot of mynellcountinghouse.com on mobile">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Mynell Counting House Website</h3>
+
+                        <p class="card-text">
+                            I rebuilt the website for Mynell Counting House, a bookkeeping firm in Brigham City, Utah,
+                            replacing WordPress with a fast static site that has no database, login page, or plugins.
+                            Staff can still publish blog posts and testimonials through a simple editor, and hosting
+                            went from $9 a month to free. I can’t take credit for the original visual design, which
+                            carried over from the firm’s previous site, but I did make improvements to it.
+                        </p>
+
+                        <!-- Mynell Button -->
+                        <a href="https://mynellcountinghouse.com/" target="_blank" class="btn btn-success"
+                            style="background-color:#539A7F; border:#539A7F">View the live website</a>
+                    </div>
+
+                    <div class="card-footer">
+                        Cloudflare Pages, GitHub, git, Formspree, Claude Code (Astro 7, React 19, Keystatic)
                     </div>
                 </div>
 
