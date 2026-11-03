@@ -1,8 +1,18 @@
 # Daniel A Dickey
 
-> Personal website of Daniel A Dickey, a full-stack software engineer in Brigham City, Utah, with a strong back-end background.
+> Personal website of Daniel A Dickey, a full-stack software engineer in Brigham City, Utah, with a strong back-end background, who builds websites and custom software for small businesses and startups.
 
 Daniel earned a Bachelor of Science in Computer Science from Utah State University in 2021. He worked as a software engineer at a multinational IT consulting firm, was promoted to Senior Software Engineer, and later to Associate Consultant. He served four years in the U.S. Army, including three deployments to Iraq. He also runs Violet Vending, a snack and drink vending service in Northern Utah.
+
+## Services
+
+Daniel works with businesses across Box Elder, Cache, and Weber Counties in Utah, as well as remotely. Payment plans are available.
+
+- Informational websites: mobile-friendly and set up so search engines and AI assistants can find them
+- Custom software: Android and iPhone apps, business tools, and other software
+- Full-stack development: front end, back end, databases, and cloud
+- Hacked site rescue: rebuilding hacked WordPress sites as static sites made with a focus on security
+- [Services details and contact](https://danieladickey.com/#services)
 
 ## Pages
 
