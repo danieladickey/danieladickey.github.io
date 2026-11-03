@@ -20,7 +20,45 @@
     <link href="https://storage.googleapis.com/danieladickey_com/dad/images/favicon/apple-touch-icon.png"
         rel="apple-touch-icon">
 
-    <title>Daniel A Dickey</title>
+    <title>Daniel A Dickey | Full-Stack Software Engineer in Utah</title>
+    <meta name="description"
+        content="Daniel A Dickey is a full-stack software engineer in Brigham City, Utah, with a computer science degree from Utah State University. See his projects, resume, and contact details.">
+    <link rel="canonical" href="https://danieladickey.com/">
+
+    <!-- Share cards -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://danieladickey.com/">
+    <meta property="og:title" content="Daniel A Dickey | Full-Stack Software Engineer in Utah">
+    <meta property="og:description"
+        content="Full-stack software engineer in Brigham City, Utah. Projects, resume, and contact details.">
+    <meta property="og:image" content="https://storage.googleapis.com/danieladickey_com/dad/images/photos/daniel.png">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Daniel A Dickey",
+        "url": "https://danieladickey.com/",
+        "image": "https://storage.googleapis.com/danieladickey_com/dad/images/photos/daniel.png",
+        "jobTitle": "Full-Stack Software Engineer",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Utah State University"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Brigham City",
+            "addressRegion": "UT",
+            "addressCountry": "US"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/danieladickey/",
+            "https://github.com/danieladickey"
+        ]
+    }
+    </script>
 
 </head>
 
@@ -42,7 +80,7 @@
         <div id="nav-container" class="container">
             <a id="nav-logo" class="navbar-brand" href="./"><img
                     src="https://storage.googleapis.com/danieladickey_com/dad/images/logos/logo_nobg_dad.png"
-                    height="25" class="d-inline-block align-text-top"></a>
+                    height="25" class="d-inline-block align-text-top" alt="Daniel A Dickey home"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -79,7 +117,7 @@
             </div>
             <a id="nav-spacer" class="navbar-brand" href="./"><img
                     src="https://storage.googleapis.com/danieladickey_com/dad/images/logos/logo_nobg_dad.png"
-                    height="25" class="d-inline-block align-text-top"></a>
+                    height="25" class="d-inline-block align-text-top" alt="Daniel A Dickey home"></a>
         </div>
     </nav>
 
@@ -87,7 +125,7 @@
 
         <!-- Welcome -->
         <div class="container">
-            <h1 class="display-4">Welcome</h1>
+            <h1 class="display-4">Daniel A Dickey</h1>
             <p class="text-justify">
                 Welcome to my website. I’m a full-stack software engineer with a strong background in back-end
                 development. With a computer science degree and hands-on industry experience, I build user-friendly
@@ -108,7 +146,7 @@
             <!-- Bio -->
             <div class="container">
                 <div>
-                    <h1 class="display-4">About Daniel</h1>
+                    <h2 class="display-4">About Daniel</h2>
                     <p>
                         I’m a member of The Church of Jesus Christ of Latter-day Saints, born and raised in Utah. I’ve
                         always loved technology, building things, and the outdoors. After high school I served four
@@ -133,37 +171,63 @@
     <section class="margin-above-below text-justify" id="portfolio">
 
         <div class="container">
-            <h1 class="text-center display-4">Portfolio</h1>
-            <!-- Card Deck ONE-->
+            <h2 class="text-center display-4">Portfolio</h2>
+            <!-- Card Deck - ONE -->
             <div class="card-deck">
+
+                <!-- Mynell Counting House Card-->
+                <div class="card bg-light mb-3">
+
+                    <!-- Image -->
+                    <img class="card-img-top" src="images/mynell_website.png"
+                        alt="Screenshot of mynellcountinghouse.com on mobile">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Mynell Counting House Website</h3>
+
+                        <p class="card-text">
+                            After the WordPress site for Mynell Counting House, a bookkeeping firm in Brigham City, Utah,
+                            was hacked, I rebuilt it as a fast static site as part of a full security overhaul: no database,
+                            plugins, or WordPress login left to attack. I also improved its search engine optimization. Staff
+                            can still publish blog posts and testimonials through a simple editor, and hosting went from
+                            $9 a month to free. I can’t take credit for the original visual design, which carried over
+                            from the firm’s previous site, but I did make improvements to it.
+                        </p>
+
+                        <!-- Mynell Button -->
+                        <a href="https://mynellcountinghouse.com/" target="_blank" class="btn btn-success"
+                            style="background-color:#539A7F; border:#539A7F">View the live website</a>
+                    </div>
+
+                    <div class="card-footer">
+                        Cloudflare Pages, GitHub, git, Formspree, Claude Code (Astro 7, React 19, Keystatic)
+                    </div>
+                </div>
 
                 <!-- Vending Data Automation Card-->
                 <div class="card bg-light mb-3">
 
                     <!-- Image -->
-                    <img class="card-img-top"
-                        src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
-                        alt="Screenshot of Vending Data Automation">
+                    <img class="card-img-top" src="images/violet_ops.png"
+                        alt="Screenshot of the Violet Ops app showing top sellers on mobile">
                     <div class="card-body">
-                        <h5 class="card-title">Vending Data Automation</h5>
+                        <h3 class="card-title h5">Violet Ops: Vending Data Automation</h3>
 
                         <p class="card-text">
-                            At the time of this writing I’m working on a project to automate the pipeline
-                            that captures Violet Vending’s daily sales with zero manual work. Seed Live emails a daily
-                            transaction CSV to Gmail; a scheduled Google Cloud function picks it up, archives the raw
-                            file to Cloud Storage, and appends the data to BigQuery. The result is a growing, queryable
-                            sales history — revenue trends, product sell-through — that runs for free and scales from
-                            one machine to a full route.
+                            Violet Ops is the software I built to run my vending business. It started as a pipeline for
+                            daily sales data. Each morning it pulls the sales report from Gmail, archives it in Cloud
+                            Storage, loads it into BigQuery, and emails me a summary of revenue, payment mix, and low
+                            stock. A mobile web app handles restocking, even with no cell coverage, along with warehouse
+                            inventory, purchases, and mileage. Monthly reconciliation checks my sales against Cantaloupe’s
+                            records, and it all runs within Google Cloud’s free tier. The code is in a private
+                            repository, so there’s no public link to it.
                         </p>
 
-                        <!-- Vending Data Automation Button -->
-                        <a href="https://github.com/danieladickey/seed-live-report" target="_blank" class="btn btn-success"
-                            style="background-color:#539A7F; border:#539A7F">View the code repository</a>
                     </div>
 
                     <div class="card-footer">
-                        Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run function, Secret Manager, Cloud Storage,
-                        BigQuery, gcloud CLI), Claude Code in VS Code, Cantaloupe Seed Live
+                        Gmail API with OAuth, GCP (Cloud Scheduler, Cloud Run, Secret Manager, Cloud Storage, BigQuery,
+                        Cloud Monitoring, gcloud CLI), Cantaloupe Seed Live, Claude Code in VS Code (Python, Flask, SQL,
+                        React 18)
                     </div>
                 </div>
 
@@ -175,7 +239,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/vending_website.png"
                         alt="Screenshot of get violet vending dot com on mobile">
                     <div class="card-body">
-                        <h5 class="card-title">Vending Website</h5>
+                        <h3 class="card-title h5">Vending Website</h3>
 
                         <p class="card-text">
                             I used ChatGPT, Codex, Claude, and Claude Code to rapidly develop a mobile first website
@@ -194,6 +258,10 @@
                         5, Tailwind CSS 3, lucide-react)
                     </div>
                 </div>
+            </div>
+
+            <!-- Card Deck - TWO -->
+            <div class="card-deck">
 
                 <!-- Daniel Aaron Dickey Website Card-->
                 <div class="card bg-light mb-3">
@@ -203,7 +271,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/personal_website.png"
                         alt="Screenshot of this website mobile header">
                     <div class="card-body">
-                        <h5 class="card-title">Portfolio Website</h5>
+                        <h3 class="card-title h5">Portfolio Website</h3>
 
                         <p class="card-text">
                             This, my personal website, serves as my portfolio and professional home on the web. Its
@@ -223,11 +291,6 @@
                     </div>
                 </div>
 
-            </div><!-- Card Deck ONE-->
-
-            <!-- Card Deck - TWO -->
-            <div class="card-deck">
-
                 <!-- Tetris Card-->
                 <div class="card bg-light mb-3">
 
@@ -236,7 +299,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/falling_squares.jpg"
                         alt="Screenshot of Tetris">
                     <div class="card-body">
-                        <h5 class="card-title">Tetris Clone</h5>
+                        <h3 class="card-title h5">Tetris Clone</h3>
 
                         <p class="card-text">
                             I built a browser-based Tetris clone with sound, music, particle effects, customizable
@@ -262,7 +325,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/lunar_lander.jpg"
                         alt="Screenshot of Lunar Lander">
                     <div class="card-body">
-                        <h5 class="card-title">Lunar Lander Simulation</h5>
+                        <h3 class="card-title h5">Lunar Lander Simulation</h3>
 
                         <p class="card-text">
                             I recreated the classic Lunar Lander game with physics simulation, randomly generated
@@ -278,6 +341,10 @@
                         JavaScript, Canvas, Bootstrap, HTML, CSS
                     </div>
                 </div>
+            </div>
+
+            <!-- Card Deck - THREE -->
+            <div class="card-deck">
 
                 <!-- Maze Card -->
                 <div class="card bg-light mb-3">
@@ -287,7 +354,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/screenshots/maze_game.jpg"
                         alt="Screenshot of the maze game">
                     <div class="card-body">
-                        <h5 class="card-title">Maze Generator & Solver</h5>
+                        <h3 class="card-title h5">Maze Generator & Solver</h3>
 
                         <p class="card-text">
                             My first web game generates a random maze using Prim’s algorithm and solves it with a
@@ -303,10 +370,6 @@
                         JavaScript, Canvas, HTML, CSS
                     </div>
                 </div>
-            </div>
-
-            <!-- Card Deck - THREE -->
-            <div class="card-deck">
 
                 <!-- Fundraiser Auction Card-->
                 <div class="card bg-light mb-3">
@@ -316,7 +379,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
                         alt="Screenshot of Fundraiser Auction">
                     <div class="card-body">
-                        <h5 class="card-title">School Auction Platform (Django)</h5>
+                        <h3 class="card-title h5">School Auction Platform (Django)</h3>
 
                         <p class="card-text">
                             As part of a four-person team, I helped build a Django-based auction site for a local
@@ -344,7 +407,7 @@
                         src="https://storage.googleapis.com/danieladickey_com/dad/images/clip_art/no_image.jpg"
                         alt="Screenshot of AI for detecting bee presence, from either image or audio">
                     <div class="card-body">
-                        <h5 class="card-title">Bee Sound Classifier (TensorFlow)</h5>
+                        <h3 class="card-title h5">Bee Sound Classifier (TensorFlow)</h3>
 
                         <p class="card-text">
                             I explored audio classification with convolutional neural networks (CNN) in TensorFlow. I
@@ -362,9 +425,13 @@
                         Python, NumPy, TensorFlow, TF Learn, pickle, Google Colab
                     </div>
                 </div>
+            </div>
+
+            <!-- Card Deck - FOUR -->
+            <div class="card-deck">
 
                 <!-- Bus tracking Android app Card -->
-                <div class="card bg-light mb-3">
+                <div class="card bg-light mb-3 card-single">
 
                     <!-- Image -->
                     <img class="card-img-top"
@@ -372,7 +439,7 @@
                         alt="Screenshot of Bus tracking Android app">
 
                     <div class="card-body">
-                        <h5 class="card-title">Bus Tracker Android App</h5>
+                        <h3 class="card-title h5">Bus Tracker Android App</h3>
 
                         <p class="card-text">
                             I developed a native Android app for the Cache Valley Transit District. It parses XML from
@@ -400,7 +467,7 @@
             <div class="container">
                 <div class="card-deck">
                     <div>
-                        <h1 class="display-4 text-right">Daniel's Resume</h1>
+                        <h2 class="display-4 text-right">Daniel's Resume</h2>
 
                         <!-- Text -->
                         <p class="card-text text-justify">I’m a full-stack software engineer and U.S. Army veteran with
@@ -441,7 +508,7 @@
                         alt="Stock photo of man holding a business card">
                 </div>
                 <div class="card invisible-card">
-                    <h1 class="display-4" id="contact-title">Contact Information</h1>
+                    <h2 class="display-4" id="contact-title">Contact Information</h2>
 
                     <div class="m-3">
                         <p>Thanks for visiting my site. If you’d like to connect, you can reach me at <a
@@ -468,6 +535,7 @@
 
     </footer>
 
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ce3e7b0125724bcd923d6e753e82b71c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 
 

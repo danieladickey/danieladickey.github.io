@@ -34,3 +34,10 @@
 .navbar-brand {
     visibility: hidden;
 }
+
+/* Keeps a card alone in its row the same width as a card in a row of three */
+@media (min-width: 576px) {
+    .card-deck .card-single {
+        flex: 0 1 calc(33.333% - 30px);
+    }
+}
