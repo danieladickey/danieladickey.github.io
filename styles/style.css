@@ -23,6 +23,7 @@
 /* remove gray card border from contact info for cleaner look */
 .invisible-card {
     border: none;
+    background-color: transparent;
 }
 
 /* Used to align the contact title with the contact buttons */
